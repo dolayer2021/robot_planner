@@ -4,7 +4,6 @@ set(project_name service)
 
 set(src_files
     service.cpp
-    robot_model.cpp
     collision_checker.cpp
 )
 
@@ -14,7 +13,13 @@ set(include_files
     collision_checker.hpp
 )
 	
-	
+#collision_checker
+add_library(collision_checker  OBJECT collision_checker.cpp collision_checker.hpp robot_model.hpp)
+target_include_directories(collision_checker PUBLIC ./)
+target_link_libraries(collision_checker  PRIVATE geometry)
+set_target_properties(collision_checker PROPERTIES FOLDER service)
+
+
 if(BUILD_STATIC_LIB)
     set(project_name ${project_name}-static)
 	add_library(${project_name} STATIC ${src_files} ${include_files}) 
