@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Fast-Planner. If not, see <http://www.gnu.org/licenses/>.
  * 
- * \file:   dijkstra_test.cpp
+ * \file:   astar_test.cpp
  * \brief:  
  * 
  * \author: Dolayer
@@ -32,7 +32,7 @@
 #include <string>
 #include <fstream>
 #include <iostream>
-#include "dijkstra.hpp"
+#include "astar.hpp"
 
 
 using namespace std;
@@ -59,7 +59,7 @@ std::string read_file(const std::string& url)
 
 int main(int argc, char* argv[])
 {
-	string map_url = R"(C:\Users\Administrator\Desktop\RPPA\data\map1.json)";
+	string map_url = R"(C:\Users\Administrator\Desktop\robot_planner\map\map2.json)";
 	string map_data = read_file(map_url);
 
 	auto map = map_resolver(map_data);
@@ -73,7 +73,8 @@ int main(int argc, char* argv[])
 	voronoi v(boundary, obstacles);
 	graph g = v.build();
 
-	planner_ptr_t ptr = std::make_unique<dijkstra>(g);
+
+	planner_ptr_t ptr = std::make_unique<astar>(g);
 
 	point2d start(30000, 13800);
 	point2d end(51000, 31177);

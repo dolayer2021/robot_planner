@@ -11,7 +11,7 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Fast-Planner is distributed in the hope that it will be useful,
+ * robot-Planner is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Fast-Planner. If not, see <http://www.gnu.org/licenses/>.
  * 
- * \file£º   voronoi.cpp
- * \brief£º  
+ * \file:   voronoi.cpp
+ * \brief:  
  * 
- * \author£º Dolayer
- * \date£º   2022/07/11
+ * \author: Dolayer
+ * \date:   2022/07/11
 
  *********************************************************************/
 #include "voronoi.hpp"
